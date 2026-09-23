@@ -1,0 +1,34 @@
+.lista-links {
+  list-style: none;
+  padding: 0;
+  width: 250px;
+}
+
+.lista-links li {
+  border-bottom: 1px solid #ccc;
+}
+
+/* Pseudo-elemento: ícono decorativo antes de cada link */
+.lista-links li a::before {
+  content: "➜ ";
+  color: #888;
+}
+
+/* Pseudo-clase: hover */
+.lista-links li a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+  transition: background-color 0.2s;
+}
+
+.lista-links li a:hover {
+  background-color: #eee;
+  color: #000;
+}
+
+/* Pseudo-clase: nth-child para filas alternadas */
+.lista-links li:nth-child(even) {
+  background-color: #f9f9f9;
+}

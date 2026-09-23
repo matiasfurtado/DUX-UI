@@ -1,0 +1,54 @@
+:root {
+  --color-primario: #4a90e2;
+  --color-secundario: #333;
+  --color-fondo: #ffffff;
+  --color-texto: #222222;
+  --espaciado: 16px;
+  --borde-radio: 8px;
+}
+
+/* Modo oscuro: se sobreescriben las variables al agregar la clase al body */
+body.modo-oscuro {
+  --color-primario: #6aa8ff;
+  --color-secundario: #eeeeee;
+  --color-fondo: #1a1a1a;
+  --color-texto: #f0f0f0;
+}
+
+body {
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  font-family: sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-secundario);
+  color: var(--color-fondo);
+  padding: var(--espaciado);
+}
+
+.contenido {
+  padding: var(--espaciado);
+}
+
+.card {
+  background-color: var(--color-fondo);
+  border: 1px solid var(--color-secundario);
+  border-radius: var(--borde-radio);
+  padding: var(--espaciado);
+  max-width: 400px;
+}
+
+.btn-primario {
+  background-color: var(--color-primario);
+  color: white;
+  border: none;
+  border-radius: var(--borde-radio);
+  padding: 10px var(--espaciado);
+  cursor: pointer;
+}

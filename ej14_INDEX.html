@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 14 — Variables CSS y temas</title>
+  <link rel="stylesheet" href="ej14_STYLES.css">
+</head>
+<body>
+
+  <header class="header">
+    <h1>Mi Sitio</h1>
+    <button id="btn-tema">Modo oscuro</button>
+  </header>
+
+  <main class="contenido">
+    <div class="card">
+      <h2>Tarjeta de ejemplo</h2>
+      <p>Este texto usa variables CSS para colores, espaciado y bordes.</p>
+      <button class="btn-primario">Botón primario</button>
+    </div>
+  </main>
+
+  <script>
+    const btn = document.getElementById('btn-tema');
+    btn.addEventListener('click', () => {
+      document.body.classList.toggle('modo-oscuro');
+    });
+  </script>
+
+</body>
+</html>

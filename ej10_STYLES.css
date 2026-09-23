@@ -1,0 +1,38 @@
+.layout {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header  header"
+    "sidebar contenido"
+    "footer  footer";
+  min-height: 100vh;
+  gap: 10px;
+}
+
+.header {
+  grid-area: header;
+  background-color: #333;
+  color: white;
+  padding: 20px;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background-color: #ddd;
+  padding: 20px;
+}
+
+.contenido {
+  grid-area: contenido;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}

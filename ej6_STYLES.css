@@ -1,0 +1,22 @@
+/* Selector de clase */
+.card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+/* Selector de ID */
+#destacado {
+  background-color: #ffe9a8;
+  padding: 10px;
+}
+
+/* Selector descendiente: párrafos dentro de .card */
+.card p {
+  color: darkblue;
+}
+
+/* Selector descendiente: span dentro de #destacado */
+#destacado span {
+  font-weight: bold;
+}

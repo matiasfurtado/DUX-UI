@@ -1,0 +1,140 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+.formulario {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 320px;
+}
+
+/* Radios que controlan el paso: ocultos pero accesibles */
+.control-paso {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.indicador {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  font-size: 0.85rem;
+  color: #999;
+}
+
+.punto {
+  cursor: default;
+}
+
+/* Ambos pasos ocultos por defecto */
+.paso {
+  display: none;
+  animation: fade 0.3s ease;
+}
+
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Mostrar el paso según qué radio esté marcado */
+#ir-paso1:checked ~ .paso1,
+#ir-paso2:checked ~ .paso2 {
+  display: block;
+}
+
+/* Resaltar el indicador del paso activo */
+#ir-paso1:checked ~ .indicador label[for="ir-paso1"],
+#ir-paso2:checked ~ .indicador label[for="ir-paso2"] {
+  color: #4a90e2;
+  font-weight: bold;
+}
+
+.campo {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+label {
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+input {
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Mensajes de error ocultos por defecto */
+.mensaje-error {
+  display: none;
+  color: #d9534f;
+  font-size: 0.8rem;
+  margin-top: 4px;
+}
+
+/* Validación: solo se marca error si el campo ya tiene contenido y es inválido */
+input:invalid:not(:placeholder-shown) {
+  border-color: #d9534f;
+}
+
+input:invalid:not(:placeholder-shown) ~ .mensaje-error {
+  display: block;
+}
+
+input:valid:not(:placeholder-shown) {
+  border-color: #5cb85c;
+}
+
+/* Botones */
+.btn {
+  display: inline-block;
+  text-align: center;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  background-color: #333;
+  color: white;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: #555;
+}
+
+.btn-siguiente {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.btn-atras {
+  margin-right: 10px;
+}
+
+.btn-enviar {
+  background-color: #4a90e2;
+}
+
+.btn-enviar:hover {
+  background-color: #3a7bc8;
+}
