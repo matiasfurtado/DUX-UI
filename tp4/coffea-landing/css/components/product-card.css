@@ -1,0 +1,93 @@
+.product-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  width: 100%;
+  padding: var(--space-16);
+  background: var(--color-sand-20);
+  border: var(--border-card) solid var(--color-sand);
+  border-radius: var(--radius-card);
+}
+.product-card__media {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-img);
+  aspect-ratio: 334 / 364;
+}
+.product-card__media img { width: 100%; height: 100%; object-fit: cover; }
+.product-card__fav-input {
+  position: absolute;
+  inset-block-start: var(--space-12);
+  inset-inline-end: var(--space-12);
+  width: var(--tap);
+  height: var(--tap);
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+.product-card__fav {
+  position: absolute;
+  inset-block-start: var(--space-12);
+  inset-inline-end: var(--space-12);
+  width: var(--tap);
+  height: var(--tap);
+  background: url("../../assets/icons/heart.svg") center / 33px 33px no-repeat;
+  pointer-events: none;
+}
+.product-card__fav-input:checked + .product-card__fav {
+  background-image: url("../../assets/icons/heart-filled.svg");
+}
+.product-card__fav-input:focus-visible + .product-card__fav {
+  outline: 2px solid var(--color-espresso);
+  outline-offset: 0;
+  border-radius: var(--radius-round);
+}
+.product-card__title {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--fs-card-title);
+  line-height: 1.15;
+  color: var(--color-espresso);
+}
+.product-card__description {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: var(--fs-lg);
+  line-height: 1.4;
+  color: var(--color-maroon);
+}
+.product-card__footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-8);
+  margin-block-start: auto;
+}
+.product-card__price {
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: var(--fs-lg);
+  color: var(--color-maroon);
+}
+.product-card__button {
+  min-height: var(--tap);
+  padding: var(--btn-pad-y) var(--btn-pad-x);
+  border: 0;
+  border-radius: var(--radius-btn);
+  background: var(--color-maroon);
+  color: var(--color-white);
+  font-family: var(--font-ui);
+  font-weight: 500;
+  font-size: var(--fs-sm);
+}
+@media (hover: hover) {
+  .product-card { transition: box-shadow var(--transition); }
+  .product-card:hover { box-shadow: 0 8px 24px var(--color-shadow); }
+  .product-card__media img { transition: transform var(--transition); }
+  .product-card:hover .product-card__media img { transform: scale(1.03); }
+  .product-card__button { transition: background-color var(--transition), transform var(--transition); }
+  .product-card__button:hover { background: var(--color-espresso); transform: translateY(-2px); }
+}

@@ -1,0 +1,23 @@
+# Sitio estático (HTML + CSS puro): sin comando de build, se publica la raíz del proyecto.
+# Despliegue continuo: conectar el repositorio de GitHub/GitLab en Netlify; la rama "main"
+# publica a producción y cada Pull/Merge Request genera un Deploy Preview (se activa en
+# Site configuration > Build & deploy > Deploy Previews). HTTPS lo gestiona Netlify.
+[build]
+  publish = "."
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

@@ -1,0 +1,31 @@
+.container {
+  width: calc(100% - 2 * var(--gutter));
+  max-width: var(--container);
+  margin-inline: auto;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--fs-h2);
+  line-height: 1.25;
+  letter-spacing: var(--tracking-h2-px);
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--color-espresso);
+}
+
+.strip {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-sand);
+}
+
+.not-found {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  padding: var(--space-56) var(--space-16);
+  text-align: center;
+}
